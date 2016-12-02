@@ -16,8 +16,18 @@ defmodule ChatExample.RoomChannel do
     {:noreply, socket}
   end
 
+  def handle_in("typing", _params, socket) do
+    Presence.update(socket, socket.assigns.current_user, %{typing: true})
+    {:noreply, socket}
+  end
+
+  def handle_in("not_typing", _params, socket) do
+    Presence.update(socket, socket.assigns.current_user, %{typing: false})
+    {:noreply, socket}
+  end
+
   def handle_info(:after_join, socket) do
-    {:ok, _} = Presence.track(socket, socket.assigns.current_user, %{})
+    {:ok, _} = Presence.track(socket, socket.assigns.current_user, %{typing: false})
     push socket, "presence_state", Presence.list(socket)
     {:noreply, socket}
   end

@@ -20,6 +20,12 @@ chatInput.addEventListener("keypress", event => {
     channel.push("new_chat_message", {message: chatInput.value})
     chatInput.value = ""
   }
+
+  if(chatInput.value.length == 0){
+    channel.push("not_typing")
+  } else {
+    channel.push("typing")
+  }
 })
 
 channel.on("new_chat_message", payload => {
@@ -38,12 +44,13 @@ let presences = {}
 let listBy = (user, {metas: metas}) => {
   return {
     user: user,
+    typing: metas.find(meta => meta.typing) ? "(schreibt)" : "",
   }
 }
 
 let renderPresences = (presences) => {
   userList.innerHTML = Presence.list(presences, listBy).map(presence => `
-    <li class="list-group-item">${presence.user}</li>
+    <li class="list-group-item">${presence.user} ${presence.typing}</li>
   `).join("")
 }
 
