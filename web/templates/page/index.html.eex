@@ -2,14 +2,6 @@
   <div class="col-md-8">
     <h2>Nachrichten</h2>
     <ul id="messages" class="list-group">
-      <li class="list-group-item">
-        Hallo Welt!
-        <span class="badge">Heiko</span>
-      </li>
-      <li class="list-group-item">
-        Herzlich Willkommen!
-        <span class="badge">Patrick</span>
-      </li>
     </ul>
     <input id="chat-input" type="text" class="form-control" placeholder="Neue Chat-Nachricht"></input>
   </div>
