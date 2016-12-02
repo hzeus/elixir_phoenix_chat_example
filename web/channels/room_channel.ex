@@ -2,7 +2,7 @@ defmodule ChatExample.RoomChannel do
 	alias ChatExample.Presence
   use ChatExample.Web, :channel
 
-  def join("room:lobby", payload, socket) do
+  def join("room"<>_channel_name, payload, socket) do
     if authorized?(payload) do
       send self, :after_join
       {:ok, socket}

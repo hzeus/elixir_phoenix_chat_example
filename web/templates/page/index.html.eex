@@ -1,6 +1,7 @@
+<script>window.room = "<%= @room %>";</script>
 <div class="row">
   <div class="col-md-8">
-    <h2>Nachrichten</h2>
+    <h2>Nachrichten (<%=@room%>)</h2>
     <ul id="messages" class="list-group">
     </ul>
     <input id="chat-input" type="text" class="form-control" placeholder="Neue Chat-Nachricht"></input>

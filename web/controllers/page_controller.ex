@@ -3,8 +3,8 @@ defmodule ChatExample.PageController do
 
   plug :authenticate
 
-  def index(conn, _params) do
-    render conn, "index.html"
+  def index(conn, params) do
+    render conn, "index.html", room: params["room"] || "lobby"
   end
 
   defp authenticate(conn, _) do
