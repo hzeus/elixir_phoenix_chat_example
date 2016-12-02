@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello ChatExample!</title>
+    <title>Chat-Beispiel-Anwendung</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,10 +16,14 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li>
+              (Nicht eingeloggt)
+            </li>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <h1>
+          Chat-Beispiel-Anwendung
+        </h1>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
