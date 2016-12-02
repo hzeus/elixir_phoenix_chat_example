@@ -1,0 +1,5 @@
+<%= form_for @conn, session_path(@conn, :create), [as: :session, class: "form-horizontal"], fn f -> %>
+  <%= text_input f, :user_name, class: "form-control", placeholder: "Name" %>
+  <%= submit "Einloggen", class: "btn btn-default" %>
+<% end %>
+

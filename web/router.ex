@@ -17,6 +17,9 @@ defmodule ChatExample.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/sign_in", SessionController, :new
+    post "/sign_in", SessionController, :create
+    delete "/sign_out", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.

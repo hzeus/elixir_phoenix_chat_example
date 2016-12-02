@@ -16,9 +16,12 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li>
-              (Nicht eingeloggt)
-            </li>
+            <%= if @current_user do %>
+              <li><%= @current_user %></li>
+              <li><%= link("Ausloggen", to: session_path(@conn, :delete), method: :delete) %></li>
+            <% else %>
+              <li>(Nicht eingeloggt)</li>
+            <% end %>
           </ul>
         </nav>
         <h1>
