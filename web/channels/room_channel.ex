@@ -10,7 +10,7 @@ defmodule ChatExample.RoomChannel do
   end
 
   def handle_in("new_chat_message", %{"message" => message}, socket) do
-    broadcast socket, "new_chat_message", %{message: message}
+    broadcast socket, "new_chat_message", %{message: message, user: socket.assigns.current_user}
     {:noreply, socket}
   end
 

@@ -5,7 +5,7 @@
 // and connect at the socket path in "lib/my_app/endpoint.ex":
 import {Socket} from "phoenix"
 
-let socket = new Socket("/socket")
+let socket = new Socket("/socket", {params: {token: window.userToken}})
 
 socket.connect()
 
@@ -26,7 +26,7 @@ channel.on("new_chat_message", payload => {
   messageItem.classList.add("list-group-item");
   let badgeItem = document.createElement("span");
   badgeItem.classList.add("badge");
-  badgeItem.innerText = "";
+  badgeItem.innerText = payload.user;
   messageItem.innerText = payload.message;
   messageItem.appendChild(badgeItem);
   messagesContainer.appendChild(messageItem)
