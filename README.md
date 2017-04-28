@@ -6,6 +6,7 @@ Weitere Unterlagen:
 
 * [Elixir-Präsentation](elixir.pdf)
 * [Phoenix-Präsentation](phoenix.pdf)
+* [FizzBuzz-Lösung](fizzbuzz.exs)
 
 ## Starten der Anwendung:
 
